@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env python3]
 # This file is part of LiteX-Boards.
 #
 # Master Platform Constraint File for the Vicara Vaaman Board (Rev 0.3)
