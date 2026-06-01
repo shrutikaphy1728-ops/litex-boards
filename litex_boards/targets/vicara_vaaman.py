@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 # Target configuration for the Vicara Vaaman Board
-# Copyright (c) 2026 Shrutika Mohalkar
-# SPDX-License-Identifier: BSD-2-Clause
-
 from migen import *
 from litex_boards.platforms import vicara_vaaman
 

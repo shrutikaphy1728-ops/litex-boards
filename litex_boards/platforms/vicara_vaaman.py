@@ -39,41 +39,39 @@ _io = [
     # DEDICATED SERIAL PROTOCOLS (Replacing generic GPIOs 2 through 7)
     # -----------------------------------------------------------------
     ("spi", 0,
-        Subsignal("clk",  Pins("G5")),  # Was G05
+        Subsignal("clk",  Pins("G5")), 
         Subsignal("mosi", Pins("H14")), 
-        Subsignal("miso", Pins("G6")),  # Was G06
-        Subsignal("cs_n", Pins("H6")),  # Was H06
+        Subsignal("miso", Pins("G6")), 
+        Subsignal("cs_n", Pins("H6")),  
         IOStandard("3.3_V_LVTTL_/_LVCMOS")
     ),
     
     ("i2c", 0,
-        Subsignal("scl", Pins("K6")),   # Was K06
+        Subsignal("scl", Pins("K6")),  
         Subsignal("sda", Pins("K15")),  
         IOStandard("3.3_V_LVTTL_/_LVCMOS")
     ),
     # -----------------------------------------------------------------
 
-    #("fpga_header_gpio", 8,  Pins("A9"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Was A09
-    # Add this right above or below your existing "spi" block
     ("winbond_cs", 0, Pins("A9"), IOStandard("3.3_V_LVTTL_/_LVCMOS")),
     
-    ("fpga_header_gpio", 9,  Pins("B9"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Was B09 
-    ("fpga_header_gpio", 10, Pins("L16"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 25 
-    ("fpga_header_gpio", 11, Pins("E9"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Was E09 
-    ("fpga_header_gpio", 12, Pins("T8"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Was T08
-    ("fpga_header_gpio", 13, Pins("L15"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 31 
-    ("fpga_header_gpio", 14, Pins("L17"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 32 
-    ("fpga_header_gpio", 15, Pins("L18"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 33 
-    ("fpga_header_gpio", 16, Pins("K17"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 34 
-    ("fpga_header_gpio", 17, Pins("M18"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 35 
-    ("fpga_header_gpio", 18, Pins("K16"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), # Header Pin 36 
+    ("fpga_header_gpio", 9,  Pins("B9"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")),
+    ("fpga_header_gpio", 10, Pins("L16"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), 
+    ("fpga_header_gpio", 11, Pins("E9"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), 
+    ("fpga_header_gpio", 12, Pins("T8"),  IOStandard("3.3_V_LVTTL_/_LVCMOS")), 
+    ("fpga_header_gpio", 13, Pins("L15"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), 
+    ("fpga_header_gpio", 14, Pins("L17"), IOStandard("3.3_V_LVTTL_/_LVCMOS")),  
+    ("fpga_header_gpio", 15, Pins("L18"), IOStandard("3.3_V_LVTTL_/_LVCMOS")),
+    ("fpga_header_gpio", 16, Pins("K17"), IOStandard("3.3_V_LVTTL_/_LVCMOS")),
+    ("fpga_header_gpio", 17, Pins("M18"), IOStandard("3.3_V_LVTTL_/_LVCMOS")),
+    ("fpga_header_gpio", 18, Pins("K16"), IOStandard("3.3_V_LVTTL_/_LVCMOS")), 
 ]
 
 # Platform Configuration ---------------------------------------------------------------------------
 
 class Platform(EfinixPlatform):
     default_clk_name   = "clk10"
-    default_clk_period = 1e9 / 10e6 # 40ns constraint evaluation baseline
+    default_clk_period = 1e9 / 10e6 
 
     def __init__(self):
         EfinixPlatform.__init__(
