@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from migen import *
-from litex_boards.platforms import vicara_vaaman
+from litex_boards.platforms import vicharak_vaaman
 
 from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
@@ -9,9 +9,9 @@ from litex.soc.cores.led import LedChaser
 
 class BaseSoC(SoCCore):
     def __init__(self, sys_clk_freq=25e6, **kwargs):
-        platform = vicara_vaaman.Platform()
+        platform = vicharak_vaaman.Platform()
         SoCCore.__init__(self, platform, sys_clk_freq,
-            ident          = "LiteX SoC on Vicara Vaaman",
+            ident          = "LiteX SoC on Vicharak Vaaman",
             ident_version  = True,
             **kwargs
         )
