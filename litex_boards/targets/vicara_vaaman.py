@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-# Target configuration for the Vicara Vaaman Board
 from migen import *
 from litex_boards.platforms import vicara_vaaman
 
@@ -10,17 +9,12 @@ from litex.soc.cores.led import LedChaser
 
 class BaseSoC(SoCCore):
     def __init__(self, sys_clk_freq=25e6, **kwargs):
-        # Load the master Vaaman platform pins we just made
         platform = vicara_vaaman.Platform()
-
-        # Automatically wire up the core SoC structures (CPU, RAM, ROM, UART)
         SoCCore.__init__(self, platform, sys_clk_freq,
             ident          = "LiteX SoC on Vicara Vaaman",
             ident_version  = True,
             **kwargs
         )
-
-        # Wire up the default LED chaser using the platform's user_led array
         self.submodules.leds = LedChaser(
             pads         = platform.request_all("user_led"),
             sys_clk_freq = sys_clk_freq
