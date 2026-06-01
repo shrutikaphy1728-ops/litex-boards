@@ -24,7 +24,7 @@ def main():
     from litex.soc.integration.soc import litex_soc_args, litex_soc_argdict
     from litex.build.parser import LiteXArgumentParser
     
-    parser = LiteXArgumentParser(description="LiteX SoC on Vicara Vaaman")
+    parser = LiteXArgumentParser(description="LiteX SoC on Vicharak Vaaman")
     target_group = parser.add_argument_group(title="Target options")
     target_group.add_argument("--build", action="store_true", help="Build bitstream")
     
